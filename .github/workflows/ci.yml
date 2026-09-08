@@ -1,0 +1,16 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ruby syntax
+        run: for f in Formula/*.rb; do ruby -c "$f"; done
+      - name: brew style
+        run: brew style Formula/
