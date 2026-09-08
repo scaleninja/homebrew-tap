@@ -1,4 +1,4 @@
-# scaleninja/homebrew-tap
+# scaleninja/tap
 
 Homebrew formulae for [scaleninja](https://scaleninja.com) command-line tools.
 
@@ -7,11 +7,9 @@ Homebrew formulae for [scaleninja](https://scaleninja.com) command-line tools.
 Add the tap once, then install tools by name:
 
 ```bash
-brew tap scaleninja/tap
+brew tap scaleninja/tap https://github.com/scaleninja/tap
 brew install drivesync
 ```
-
-Or in one step (this also adds the tap): `brew install scaleninja/tap/drivesync`.
 
 Once the tap is added, `brew update` picks up new tools and new versions, and any
 formula added to this repository in the future installs with plain `brew install <name>`.
@@ -39,5 +37,10 @@ To add a new CLI:
    *Contents: read and write* on this repository; an org-level secret can be shared by
    every project).
 4. Add a row to the table above.
+
+Note: Homebrew maps `brew tap <user>/<name>` to a GitHub repository called
+`homebrew-<name>`. This repository is named `tap`, so the URL must be given when tapping.
+Renaming it to `homebrew-tap` would let `brew tap scaleninja/tap` and
+`brew install scaleninja/tap/drivesync` work without the URL (GitHub redirects the old name).
 
 Pull requests here run `brew style` and a Ruby syntax check on every formula.
