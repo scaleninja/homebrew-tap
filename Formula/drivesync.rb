@@ -11,23 +11,23 @@ class Drivesync < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.1/dsync-macos-arm64"
-      sha256 "70f9ffe12045268a6bd4f26984d12f1e6487215d7ce258148d7ee9da48bb5c0b"
+      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.2/dsync-macos-arm64"
+      sha256 "619099449445de3aea4de15f1734429063e27809f44d0a77dac27d385707dd8a"
     end
     on_intel do
-      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.1/dsync-macos-x86_64"
-      sha256 "99948ddcd44c3e9c5671228a68267222186dbf73255a18ad7f48326f01637bdf"
+      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.2/dsync-macos-x86_64"
+      sha256 "ba19bccc4753caf659cf27e103b4171e886cc371fc2340d6f44d72b96611f6fe"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.1/dsync-linux-arm64"
-      sha256 "e2fc1159af9f40d9b58412b9c25533becb61f392ed8a60b20bb35a1fb4604c14"
+      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.2/dsync-linux-arm64"
+      sha256 "1689c0b63a2d50e625433318b1136e65e4bc3982a29290a78e566e23b9864646"
     end
     on_intel do
-      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.1/dsync-linux-x86_64"
-      sha256 "36e78f91b671b185d94eefab5a0ed086d51d101a76e31ba9471ae911c43b28a0"
+      url "https://github.com/scaleninja/drivesync/releases/download/v0.4.2/dsync-linux-x86_64"
+      sha256 "28fb649aedba0fcd692f1ed5647f500efe0c391300c6b9ce1503927f7052b042"
     end
   end
 
