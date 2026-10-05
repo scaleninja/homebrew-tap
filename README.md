@@ -1,14 +1,17 @@
 # scaleninja/homebrew-tap
 
-Homebrew formulae for [scaleninja](https://scaleninja.com) command-line tools.
+Homebrew formulae and casks for [scaleninja](https://scaleninja.com) command-line tools and Mac apps.
 
 ## Usage
 
-Add the tap once, then install tools by name:
+Add and trust the tap once, then install tools and apps by name:
 
 ```bash
 brew tap scaleninja/tap
+brew trust --tap scaleninja/tap
 brew install drivesync
+brew install --cask deltasnap
+brew install --cask macvisor
 ```
 
 Or in one step (this also adds the tap): `brew install scaleninja/tap/drivesync`.
@@ -16,13 +19,25 @@ Or in one step (this also adds the tap): `brew install scaleninja/tap/drivesync`
 Once the tap is added, `brew update` picks up new tools and new versions, and any
 formula added to this repository in the future installs with plain `brew install <name>`.
 
-If Homebrew refuses with an "untrusted tap" error, run `brew trust scaleninja/tap` first.
+Trusting the tap stops Homebrew from warning about, or refusing to load, a non-official tap.
 
 ## Formulae
 
 | Formula     | Installs | Project                                                      |
 |-------------|----------|--------------------------------------------------------------|
 | `drivesync` | `dsync`  | [scaleninja/drivesync](https://github.com/scaleninja/drivesync) |
+
+## Casks
+
+| Cask        | Installs        | Product                                          |
+|-------------|-----------------|--------------------------------------------------|
+| `deltasnap` | `DeltaSnap.app` | [DeltaSnap](https://scaleninja.com/deltasnap/)   |
+| `macvisor`  | `MacVisor.app`  | [MacVisor](https://scaleninja.com/macvisor/)     |
+
+The apps update themselves through Sparkle (`auto_updates true`), so `brew upgrade` skips
+them unless you pass `--greedy`. To publish a new release, bump `version` and `sha256` in
+`Casks/<name>.rb` (`shasum -a 256 <zip>`); `brew livecheck --cask <name>` reads the
+Sparkle appcast to confirm the cask matches the latest release.
 
 ## Adding a tool
 

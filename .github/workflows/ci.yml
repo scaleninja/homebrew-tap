@@ -11,6 +11,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Ruby syntax
-        run: for f in Formula/*.rb; do ruby -c "$f"; done
+        run: for f in Formula/*.rb Casks/*.rb; do ruby -c "$f"; done
       - name: brew style
-        run: brew style Formula/
+        run: brew style Formula/ Casks/
