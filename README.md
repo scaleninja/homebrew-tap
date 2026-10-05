@@ -11,6 +11,7 @@ brew tap scaleninja/tap
 brew trust --tap scaleninja/tap
 brew install drivesync
 brew install --cask deltasnap
+brew install --cask deltasync
 brew install --cask macvisor
 ```
 
@@ -32,12 +33,14 @@ Trusting the tap stops Homebrew from warning about, or refusing to load, a non-o
 | Cask        | Installs        | Product                                          |
 |-------------|-----------------|--------------------------------------------------|
 | `deltasnap` | `DeltaSnap.app` | [DeltaSnap](https://scaleninja.com/deltasnap/)   |
+| `deltasync` | `DeltaSync.app` | [DeltaSync](https://scaleninja.com/deltasync/)   |
 | `macvisor`  | `MacVisor.app`  | [MacVisor](https://scaleninja.com/macvisor/)     |
 
-The apps update themselves through Sparkle (`auto_updates true`), so `brew upgrade` skips
+DeltaSnap and MacVisor update themselves through Sparkle (`auto_updates true`), so `brew upgrade` skips
 them unless you pass `--greedy`. To publish a new release, bump `version` and `sha256` in
 `Casks/<name>.rb` (`shasum -a 256 <zip>`); `brew livecheck --cask <name>` reads the
-Sparkle appcast to confirm the cask matches the latest release.
+Sparkle appcast to confirm the cask matches the latest release. DeltaSync is served from an
+unversioned URL, so its cask uses `sha256 :no_check`; bump only `version` when it changes.
 
 ## Adding a tool
 
