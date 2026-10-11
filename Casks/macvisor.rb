@@ -17,6 +17,10 @@ cask "macvisor" do
   depends_on macos: :golden_gate
 
   app "MacVisor.app"
+  bash_completion "#{appdir}/MacVisor.app/Contents/Resources/completions/macvisor.bash"
+  zsh_completion "#{appdir}/MacVisor.app/Contents/Resources/completions/_macvisor"
+  fish_completion "#{appdir}/MacVisor.app/Contents/Resources/completions/macvisor.fish"
+  fish_completion "#{appdir}/MacVisor.app/Contents/Resources/completions/macvisor.fish", target: "mvz.fish"
 
   zap trash: [
     "~/Library/Application Support/MacVisor",
