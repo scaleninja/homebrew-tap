@@ -1,6 +1,6 @@
 cask "macvisor" do
-  version "27.0.0-beta4"
-  sha256 "0d8721f10753afd4b8b043046dd1df04b2988dfc3f5dcaa7240c4f07a6af7580"
+  version "27.0.0-beta5"
+  sha256 "cc6fd8e45a2dd0e977316b2efcfa932ee53d7eaa5d454e572faf38d9ea574540"
 
   url "https://scaleninja.com/download/macvisor/releases/MacVisor-#{version}.zip"
   name "MacVisor"
