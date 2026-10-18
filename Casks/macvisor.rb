@@ -22,11 +22,20 @@ cask "macvisor" do
   fish_completion "#{appdir}/MacVisor.app/Contents/Resources/completions/macvisor.fish"
   fish_completion "#{appdir}/MacVisor.app/Contents/Resources/completions/macvisor.fish", target: "mvz.fish"
 
+  uninstall launchctl: "com.scaleninja.macvisor.inference",
+            quit:      "com.scaleninja.macvisor"
+
   zap trash: [
+    "~/.macvisor",
     "~/Library/Application Support/MacVisor",
     "~/Library/Caches/com.scaleninja.macvisor",
+    "~/Library/Caches/com.scaleninja.macvisor.service",
     "~/Library/HTTPStorages/com.scaleninja.macvisor",
+    "~/Library/HTTPStorages/com.scaleninja.macvisor.service",
+    "~/Library/LaunchAgents/com.scaleninja.macvisor.inference.plist",
+    "~/Library/Preferences/com.scaleninja.macvisor.cli.plist",
     "~/Library/Preferences/com.scaleninja.macvisor.plist",
+    "~/Library/Preferences/com.scaleninja.macvisor.runner.plist",
     "~/Library/Saved Application State/com.scaleninja.macvisor.savedState",
   ]
 
