@@ -1,8 +1,8 @@
 cask "macvisor" do
-  version "27.2.0"
-  sha256 "10a8822036f3ab2f038d5902e604d417065301ac895d584e309a208c58d28ad4"
+  version "27.2.1-rc1"
+  sha256 "184d0869c890c9487c0fabcc125d9bb606b9ba8f341c8858d99c902edad720c3"
 
-  url "https://scaleninja.com/download/macvisor/releases/MacVisor-#{version}.zip"
+  url "https://dl.scaleninja.com/macvisor/releases/MacVisor-#{version}.zip"
   name "MacVisor"
   desc "Native virtual machine manager for Apple Silicon Macs"
   homepage "https://scaleninja.com/macvisor/"
